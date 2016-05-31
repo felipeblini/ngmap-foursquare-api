@@ -1,0 +1,44 @@
+{
+  "id": "4ce0703d78ddf04d3260a698",
+  "name": "Habib's",
+  "location": {
+  "address": "Av. Afonso Pena, 861",
+    "lat": -19.920401456489433,
+    "lng": -43.93775939941406,
+    "distance": 47,
+    "cc": "BR",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "country": "Brasil",
+    "formattedAddress": [
+    "Av. Afonso Pena, 861",
+    "Belo Horizonte, MG",
+    "30130-002",
+    "Brasil"
+  ]
+},
+  "categories": [
+  {
+    "id": "4bf58dd8d48988d16e941735",
+    "name": "Restaurante Fast Food",
+    "pluralName": "Restaurantes Fast Food",
+    "shortName": "Fast Food",
+    "icon": {
+      "prefix": "https://ss3.4sqi.net/img/categories_v2/food/fastfood_",
+      "suffix": ".png"
+    },
+    "primary": true
+  }
+],
+  "stats": {
+    "checkinsCount": 2266,
+    "usersCount": 1355,
+    "tipCount": 55
+},
+  "url": "http://www.facebook.com/HabibsOnline",
+  "hereNow": {
+  "count": 0,
+    "summary": "Não há ninguém aqui",
+    "groups": []
+  }
+}

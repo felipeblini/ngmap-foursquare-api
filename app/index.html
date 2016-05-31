@@ -21,7 +21,7 @@
   <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -44,7 +44,9 @@
                 <i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
               </uib-accordion-heading>
               <ul class="nav nav-second-level">
-                <li ng-repeat="cat in categories"><a href="#/">{{cat.name}}</a></li>
+                <li ng-repeat="cat in categories">
+                  <a href="#/">{{cat.shortName}}</a>
+                </li>
             </ul>
             </uib-accordion-group>
           </uib-accordion>
@@ -87,13 +89,15 @@
     </div><!-- /#sidebar-wrapper -->
 
     <!-- Toggle menu animated icon -->
-    <div class="toggle-menu" data-toggle-menu id="menu-toggle">
-      Toggle menu
-      <span class="menu__bar"></span>
-      <span class="menu__bar"></span>
-      <span class="menu__bar"></span>
+    <div class="menu-toggle-wrapper">
+      <div class="toggle-menu" data-toggle-menu id="menu-toggle">
+        Toggle menu
+        <span class="menu__bar"></span>
+        <span class="menu__bar"></span>
+        <span class="menu__bar"></span>
+      </div>
     </div>
-        
+
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
@@ -101,15 +105,14 @@
       </div>
     </div>
     <!-- /#page-content-wrapper -->
-    
+
   </div>
   <!-- /#wrapper -->
-  
+
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -118,14 +121,14 @@
   <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
-  
+
   <!-- Menu Toggle Script -->
   <script>
     $(document).ready(function() {
       $(".category").click(function(e) {
         $(this).toggleClass("active");
       });
-      
+
       $("#ex8").slider();
     })
   </script>
@@ -133,11 +136,14 @@
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
   <script src="scripts/routes/main-route.js"></script>
-  
+  <script src="scripts/constants/app-constants.js"></script>
+  <script src="scripts/services/geolocation.js"></script>
+  <script src="scripts/services/localsFactory.js"></script>
+
   <script src="scripts/components/toggle-menu-icon.js"></script>
-  
-  <script src="scripts/controllers/sidebar-ctrl.js"></script>
-  <script src="scripts/controllers/main-ctrl.js"></script>
+
+  <script src="scripts/controllers/sidebarCtrl.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
   <!-- endbuild -->
 </body>
 
