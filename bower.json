@@ -9,7 +9,7 @@
     "angular-animate": "^1.5.6",
     "angular-touch": "^1.5.6",
     "ngmap": "^1.17.3",
-    "seiyria-bootstrap-slider": "^7.1.1"
+    "angular-awesome-slider": "ng-slider#^2.4.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

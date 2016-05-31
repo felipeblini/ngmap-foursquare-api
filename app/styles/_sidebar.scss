@@ -4,11 +4,11 @@
     #wrapper {
         padding-left: $sidebar_wrapper_width;
     }
-    
+
     #wrapper #sidebar-wrapper {
         width: $sidebar_wrapper_width;
     }
-    
+
     #wrapper #page-content-wrapper {
         position: absolute;
         margin-right: $sidebar_wrapper_width * -1;
@@ -69,12 +69,12 @@
     background: none;
 }
 
-.sidebar-nav { 
+.sidebar-nav {
     .panel {
         background-color: transparent;
         border: none;
     }
-    
+
     .panel-title a:hover {
         background-color: transparent;
     }
@@ -107,12 +107,23 @@
     color: #ffffff;
 }
 
+/* Slider */
+.jslider div.jslider-label {
+  color: #ccc !important;
+  font-size: 12px;
+}
+
+.jslider div.jslider-label,
+.jslider div.jslider-value {
+  color: #000;
+}
+
 @media(min-width:768px) {
     .toggled {
         #wrapper {
             padding-left: 0;
         }
-        
+
         #wrapper #sidebar-wrapper {
             width: 0;
         }

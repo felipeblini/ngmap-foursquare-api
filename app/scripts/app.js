@@ -14,6 +14,7 @@
         'ngRoute',
         'ui.bootstrap',
         'ngAnimate',
-        'ngMap'
+        'ngMap',
+        'angularAwesomeSlider'
       ]);
 }());
