@@ -9,19 +9,25 @@
      * Controller of the softruckFoursquareApp
      */
     angular.module('softruckFoursquareApp')
-      .controller('MainCtrl', function () {
+      .controller('MainCtrl', function ($rootScope, GeolocationService) {
         var vm = this;
 
-        vm.mapMarkers = [];
+        vm.initialLatLong = { latlong: '-19.9208300, -43.9377800' };
 
-        vm.LatLong = '-19.9208300, -43.9377800';
+        $rootScope.mapMarkers = [];
+        $rootScope.mapMarkers.push(vm.initialLatLong);
+        $rootScope.userLocation = vm.initialLatLong.latlong;
 
-        vm.mapMarkers[0] = { latlong:  vm.BHLatLong};
+        GeolocationService.getUserLocation()
+          .then(function (response) {
+            var latlong;
+            latlong = response.data.location.lat + ',' + response.data.location.lng;
 
-        vm.awesomeThings = [
-          'HTML5 Boilerplate',
-          'AngularJS',
-          'Karma'
-        ];
+            $rootScope.mapMarkers = [];
+            $rootScope.mapMarkers.push({ latlong:  latlong});
+            $rootScope.userLocation = latlong;
+
+            console.log('user location', latlong);
+          })
       });
 }());

@@ -43,7 +43,7 @@
                 <i class="glyphicon glyphicon-flag"></i> <span class="nav-label">Distance</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
               </uib-accordion-heading>
               <div style="margin-top:10px">
-                <input ng-model="distance" type="text" slider options="sliderOptions" />
+                <input ng-model="radius" type="text" slider options="sliderOptions" />
               </div>
             </uib-accordion-group>
           </uib-accordion>
@@ -57,7 +57,7 @@
               </uib-accordion-heading>
               <ul class="nav">
                 <li ng-repeat="cat in categories">
-                  <a href="#/">{{cat.shortName}}</a>
+                  <a href="#/" ng-click="findByCategoryAndRadius(cat.id)">{{cat.shortName}}</a>
                 </li>
             </ul>
             </uib-accordion-group>
@@ -72,7 +72,7 @@
               </uib-accordion-heading>
               <ul class="nav">
                 <li ng-repeat="place in TopFiveNearby">
-                  <a href="#">{{ place.venue.name }}</a>
+                  <a href="/#" ng-click="markOnMap({ lat: place.venue.location.lat, lng: place.venue.location.lng})">{{ place.venue.name }}</a>
                 </li>
               </ul>
             </uib-accordion-group>

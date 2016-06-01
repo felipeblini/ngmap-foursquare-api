@@ -13,7 +13,7 @@
       .config(function ($routeProvider) {
         $routeProvider
           .when('/', {
-            templateUrl: 'views/main.html',
+            templateUrl: 'views/map.html',
             controller: 'MainCtrl',
             controllerAs: 'vm'
           })
