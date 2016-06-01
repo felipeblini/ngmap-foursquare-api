@@ -10,15 +10,15 @@
      */
     angular
         .module('softruckFoursquareApp')
-        .controller('SideBarCtrl', function($scope, $rootScope, LocalsDataFactory, GeolocationService) {
+        .controller('SideBarCtrl', function($scope, $rootScope, $timeout, NgMap, LocalsDataFactory, GeolocationService) {
+
+          var dataFactory = LocalsDataFactory.api;
 
           $scope.categories = [];
           $scope.TopFiveNearby = [];
 
           $rootScope.categoryId = '';
           $rootScope.radius = 100;
-
-          var dataFactory = LocalsDataFactory.api;
 
           $scope.sliderOptions = {
             from: 5,
@@ -35,7 +35,7 @@
             },
             callback: function(sliderRadiusValue) {
               console.log(sliderRadiusValue);
-              getByCategoryIdAndRadius(undefined, sliderRadiusValue)
+              getPlaceByCategoryIdAndRadius(undefined, sliderRadiusValue)
             }
           };
 
@@ -70,7 +70,6 @@
           }
 
           function getTopFivePlaces(userLocation) {
-            console.log('getting top 5 places', userLocation);
             var latlong;
             latlong = userLocation.data.location.lat + ',' + userLocation.data.location.lng;
 
@@ -109,7 +108,7 @@
             return categoriesList;
           }
 
-          function getByCategoryIdAndRadius (catId, rad) {
+          function getPlaceByCategoryIdAndRadius (catId, rad) {
             if(catId)
               $rootScope.categoryId = catId;
 
@@ -130,11 +129,28 @@
                 var dataLength = data.length;
                 var i;
 
+                console.log('data', data);
+
                 $rootScope.mapMarkers = [];
 
                 for(i = 0; i < dataLength; i++) {
-                  var latlon = data[i].location.lat + ',' + data[i].location.lng;
-                  $rootScope.mapMarkers.push({ latlong:  latlon});
+                  var lat, lon, place;
+                  lat = data[i].location.lat;
+                  lon = data[i].location.lng;
+
+                  place = {
+                    id: data[i].id,
+                    name: data[i].name,
+                    position: [lat, lon]
+                  }
+
+                  console.log(place);
+
+                  // Clean heatmap to show the new places
+                  cleanHeatMap();
+
+                  // Show new places
+                  $rootScope.mapMarkers.push(place);
                 }
               })
               .catch(function (error) {
@@ -142,17 +158,51 @@
               });
           }
 
-          $scope.findByCategoryAndRadius = getByCategoryIdAndRadius;
+          $scope.findByCategoryAndRadius = getPlaceByCategoryIdAndRadius;
 
-          $scope.markOnMap = function(params) {
-            var latlng = params.lat + ',' + params.lng;
+          $scope.markTopFiveOnMap = function(params) {
+            console.log(params);
+            var lat, long, name, id, checkins, users, total;
+            lat = params.lat;
+            long = params.lng;
+            name = params.name;
+            id = params.id;
+            checkins = params.checkins;
+            users = params.users;
+
+            total = checkins || users;
 
             console.log($rootScope.mapMarkers);
 
             $rootScope.mapMarkers = [];
-            $rootScope.mapMarkers.push({ latlong:  latlng});
+
+            $rootScope.mapMarkers.push({
+              id: id,
+              name: name,
+              position:[lat, long],
+              checkins: total + ' estiveram aqui'
+            });
 
             console.log($rootScope.mapMarkers);
+
+            cleanHeatMap();
           }
+
+          var cleanHeatMap = function () {
+            $rootScope.taxiData = [];
+
+            NgMap.getMap().then(function(map) {
+              $rootScope.heatmap.data.j = [];
+              $rootScope.hideMap = true;
+              $rootScope.heatmap.data.j = $rootScope.taxiData;
+
+              map.zoom = 3;
+
+              $timeout(function () {
+                $rootScope.hideMap = false;
+                google.maps.event.trigger(map,'resize');
+              }, 100);
+            });
+          };
     });
 }());

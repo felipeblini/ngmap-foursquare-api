@@ -29,6 +29,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/ngmap/build/scripts/ng-map.js',
       'bower_components/angular-awesome-slider/dist/angular-awesome-slider.js',
+      'bower_components/angular-google-gapi/dist/angular-google-gapi.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

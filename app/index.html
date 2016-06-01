@@ -72,7 +72,13 @@
               </uib-accordion-heading>
               <ul class="nav">
                 <li ng-repeat="place in TopFiveNearby">
-                  <a href="/#" ng-click="markOnMap({ lat: place.venue.location.lat, lng: place.venue.location.lng})">{{ place.venue.name }}</a>
+                  <a href="#/" ng-click="markTopFiveOnMap({
+                    lat: place.venue.location.lat,
+                    lng: place.venue.location.lng,
+                    name: place.venue.name,
+                    id: place.venue.id,
+                    checkins: place.venue.stats.checkinsCount,
+                    users: place.venue.stats.usersCount})">{{ place.venue.name }}</a>
                 </li>
               </ul>
             </uib-accordion-group>
@@ -84,8 +90,11 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a href="">
+                  <a href="#/" ng-click="showHeatMap()">
                     <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Heat map</span></i></span>
+                  </a><br />
+                  <a href="#/" ng-click="cleanHeatMap()">
+                    <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Clean Heat map</span></i></span>
                   </a>
                 </h4>
               </div>
@@ -126,6 +135,7 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
   <script src="bower_components/angular-awesome-slider/dist/angular-awesome-slider.js"></script>
+  <script src="bower_components/angular-google-gapi/dist/angular-google-gapi.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -150,8 +160,11 @@
   <script src="scripts/services/localsFactory.js"></script>
 
   <script src="scripts/controllers/sidebarCtrl.js"></script>
-  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/mapCtrl.js"></script>
   <!-- endbuild -->
+
+  <script src="scripts/script-tags-for-development.js"></script>
+
 </body>
 
 </html>

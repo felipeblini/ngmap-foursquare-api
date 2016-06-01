@@ -15,6 +15,7 @@
         'ui.bootstrap',
         'ngAnimate',
         'ngMap',
-        'angularAwesomeSlider'
+        'angularAwesomeSlider',
+        'angular-google-gapi'
       ]);
 }());
