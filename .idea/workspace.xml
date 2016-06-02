@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e2b6c5d-2e7b-46ed-b7d5-3de7830df5a2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_444444_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_555555_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_777620_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_777777_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_cc0000_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/sidebar-behaviors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.structure.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/vendors/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/spec/services/CategoriesServiceSpec.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/scripts/script-tags-for-development.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/scripts/taxi-data.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/components/array.js" afterPath="$PROJECT_DIR$/app/components/array.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/components/toggle-menu-icon.js" afterPath="$PROJECT_DIR$/app/components/toggle-menu-icon.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/geolocation.js" afterPath="$PROJECT_DIR$/app/scripts/services/geolocationService.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/spec/services/geolocationSpec.js" afterPath="$PROJECT_DIR$/test/spec/services/geolocationServiceSpec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/mapCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/mapCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/sidebarCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/sidebarCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/localsFactory.js" afterPath="$PROJECT_DIR$/app/scripts/services/localsFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/_sidebar.scss" afterPath="$PROJECT_DIR$/app/styles/_sidebar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/map.html" afterPath="$PROJECT_DIR$/app/views/map.html" />
     </list>
     <ignored path="softruck-foursquare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="sidebarCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sidebarCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sidebarCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="426">
               <caret line="207" column="24" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -129,16 +110,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_sidebar.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/_sidebar.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="mapCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/mapCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -205,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/views/map.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/mapCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/sidebarCtrl.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -531,12 +503,12 @@
       <option name="presentableId" value="Default" />
       <updated>1464691646348</updated>
       <workItem from="1464691647512" duration="38602000" />
-      <workItem from="1464778405195" duration="42185000" />
+      <workItem from="1464778405195" duration="42568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80787000" />
+    <option name="totallyTimeSpent" value="81170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
@@ -869,6 +841,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="207" column="24" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding />
         </state>
       </provider>
