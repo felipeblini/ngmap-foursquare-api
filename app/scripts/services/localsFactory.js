@@ -16,7 +16,7 @@
 
       var API = {};
 
-      API.getCategories = function(latlong) {
+      API.getPlacesAroundLatLong = function(latlong) {
         var type = 'search';
 
         return $http.get(resource + '/' + type, {

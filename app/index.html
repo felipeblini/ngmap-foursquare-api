@@ -11,6 +11,8 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-awesome-slider/dist/css/angular-awesome-slider.min.css" />
   <!-- endbower -->
+
+  <link rel="stylesheet" href="components/vendors/jquery-ui-1.11.4.custom/jquery-ui.min.css">
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -90,12 +92,13 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a href="#/" ng-click="showHeatMap()">
-                    <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Heat map</span></i></span>
-                  </a><br />
-                  <a href="#/" ng-click="cleanHeatMap()">
-                    <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Clean Heat map</span></i></span>
-                  </a>
+                  <form ng-submit="showHeatMap()">
+                    <input placeholder="Type a city..." required name="txtEndereco" ng-model="nameHeatMap" id="txtEndereco" class="form-control" style="margin-bottom: 5px">
+                    <input class="hide" type="text" id="txtLatLon" name="txtLatLon" ng-model="latlongHeatMap" required>
+                    <button class="btn btn-default" type="submit">
+                      <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Heat map</span></i></span>
+                    </button>
+                  </form>
                 </h4>
               </div>
             </div>
@@ -125,10 +128,14 @@
   </div>
   <!-- /#wrapper -->
 
+  <!-- Google maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnukcKfjgitOWN5XFsGchuyJnyT42JiA&libraries=placeses,visualization,drawing,geometry,places"></script>
+
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -139,32 +146,26 @@
   <!-- endbower -->
   <!-- endbuild -->
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $(document).ready(function() {
-      $(".category").click(function(e) {
-        $(this).toggleClass("active");
-      });
-    })
-  </script>
-
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <!-- main module and configs -->
   <script src="scripts/app.js"></script>
   <script src="scripts/routes/main-route.js"></script>
   <script src="scripts/constants/app-constants.js"></script>
 
-  <script src="scripts/components/array.js"></script>
-  <script src="scripts/components/toggle-menu-icon.js"></script>
+  <!-- third part and custom components -->
+  <script src="components/vendors/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+  <script src="components/array.js"></script>
+  <script src="components/toggle-menu-icon.js"></script>
+  <script src="components/sidebar-behaviors.js"></script>
 
-  <script src="scripts/services/geolocation.js"></script>
+  <!-- services -->
+  <script src="scripts/services/geolocationService.js"></script>
   <script src="scripts/services/localsFactory.js"></script>
+  <script src="scripts/services/categoriesService.js"></script>
 
+  <!-- controllers -->
   <script src="scripts/controllers/sidebarCtrl.js"></script>
   <script src="scripts/controllers/mapCtrl.js"></script>
   <!-- endbuild -->
-
-  <script src="scripts/script-tags-for-development.js"></script>
-
 </body>
-
 </html>

@@ -202,7 +202,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        exclude: ['bootstrap.js'],
+        //exclude: ['bootstrap.js'],
         ignorePath:  /\.\.\//
       },
       test: {
@@ -225,7 +225,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
