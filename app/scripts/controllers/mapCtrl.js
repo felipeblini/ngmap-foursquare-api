@@ -26,10 +26,6 @@
           position: [-19.9208300, -43.9377800]
         };
 
-        var taxiData = [
-          new google.maps.LatLng(vm.initialMarker.position[0], vm.initialMarker.position[1])
-        ];
-
         $rootScope.hideMap = false;
 
         $rootScope.taxiData = [];

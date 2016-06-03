@@ -202,7 +202,6 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        //exclude: ['bootstrap.js'],
         ignorePath:  /\.\.\//
       },
       test: {
@@ -329,6 +328,7 @@ module.exports = function (grunt) {
     // concat: {
     //   dist: {}
     // },
+
     imagemin: {
       dist: {
         files: [{

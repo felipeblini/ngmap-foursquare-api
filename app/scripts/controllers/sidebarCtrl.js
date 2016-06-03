@@ -136,7 +136,7 @@
 
         // Clean heatmap to show the new places
         cleanHeatMap();
-      }
+      };
 
       $scope.findByCategoryAndRadius = getPlaceByCategoryIdAndRadius;
 
