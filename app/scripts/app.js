@@ -11,5 +11,7 @@
 angular
   .module('softruckFoursquareApp', [
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap',
+    'ngAnimate'
   ]);

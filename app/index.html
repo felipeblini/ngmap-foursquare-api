@@ -32,30 +32,25 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
+      <ul class="sidebar-nav nav">
         <li class="sidebar-brand">
-          <a href="#">Start Bootstrap</a>
+          <h3>Softruck 4square</h3>
         </li>
-        <li>
-          <a href="#">Dashboard</a>
-        </li>
-        <li>
-          <a href="#">Shortcuts</a>
-        </li>
-        <li>
-          <a href="#">Overview</a>
-        </li>
-        <li>
-          <a href="#">Events</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
+          <li class="nav-first-level active">
+          <uib-accordion close-others="oneAtATime">
+            <uib-accordion-group is-open="open">
+              <uib-accordion-heading class="category">
+                <i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
+              </uib-accordion-heading>
+               <ul class="nav nav-second-level">
+                  <li><a href="#/">Night</a></li>
+                  <li><a href="#/">Dinner</a></li>
+                  <li><a href="#/">Coffee</a></li>
+                  <li><a href="#/">Bakery</a></li>
+                  <li><a href="#/">Lunch</a></li>
+              </ul>
+            </uib-accordion-group>
+          </uib-accordion>
         </li>
       </ul>
     </div>
@@ -94,14 +89,16 @@
   <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+    $(".category").click(function(e) {
+        $(this).toggleClass("active");
     });
   </script>
 

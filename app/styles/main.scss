@@ -15,6 +15,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Toggle Styles */
 
+a {
+    outline: none !important;
+}
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -29,7 +33,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     padding: 15px;
 }
 
-/* Sidebar Styles */
+/* ng-animate dependency */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 @media(min-width:768px) {
     #wrapper {
