@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Service: myApp.geolocation', function () {
 
     // load the service's module

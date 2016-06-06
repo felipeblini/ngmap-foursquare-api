@@ -14,6 +14,8 @@
 
       var placesDataFactory = LocalsDataFactory.api;
 
+      var gm = window.google.maps;
+
       $scope.categories = [];
       $scope.TopFiveNearby = [];
 
@@ -25,17 +27,17 @@
         to: 300,
         floor: true,
         step: 5,
-        dimension: " km",
+        dimension: ' km',
         vertical: false,
         css: {
-          background: {"background-color": "silver"},
-          before: {"background-color": "#333"},
-          after: {"background-color": "#333"},
-          pointer: {"background-color": "#ccc"}
+          background: {'background-color': 'silver'},
+          before: {'background-color': '#333'},
+          after: {'background-color': '#333'},
+          pointer: {'background-color': '#ccc'}
         },
         callback: function(sliderRadiusValue) {
           console.log(sliderRadiusValue);
-          getPlaceByCategoryIdAndRadius(undefined, sliderRadiusValue)
+          getPlaceByCategoryIdAndRadius(undefined, sliderRadiusValue);
         }
       };
 
@@ -50,8 +52,8 @@
                 $scope.categories = CategoriesService.findCategoriesInAList(placesList);
               })
               .catch(function (error) {
-                console.log("Not possible to get the places list", error);
-              })
+                console.log('Not possible to get the places list', error);
+              });
 
             return userLocation;
           })
@@ -62,11 +64,11 @@
                   $scope.TopFiveNearby = theTopFivePlaces.data.response.groups[0].items;
                 });
             } else {
-              console.log("No data to get top 5 places nearby user", error);
+              console.log('No data to get top 5 places nearby user');
             }
           })
           .catch(function (error) {
-            console.log("Not possible to get the user geolocation", error);
+            console.log('Not possible to get the user geolocation', error);
           });
       }
 
@@ -89,11 +91,13 @@
       }
 
       function getPlaceByCategoryIdAndRadius (catId, rad) {
-        if(catId)
+        if(catId) {
           $rootScope.categoryId = catId;
+        }
 
-        if(rad)
+        if(rad) {
           $rootScope.radius = rad;
+        }
 
         var params = {
           ll: $rootScope.userLocation,
@@ -176,7 +180,7 @@
 
           $timeout(function () {
             $rootScope.hideMap = false;
-            google.maps.event.trigger(map,'resize');
+            gm.event.trigger(map,'resize');
           }, 100);
         });
       };
@@ -207,7 +211,7 @@
               lat = data[i].location.lat;
               lng = data[i].location.lng;
 
-              $rootScope.taxiData.push(new google.maps.LatLng(lat, lng));
+              $rootScope.taxiData.push(new gm.LatLng(lat, lng));
             }
 
             var newMarker = {
@@ -230,7 +234,7 @@
           $timeout(function () {
             $rootScope.hideMap = false;
             map.zoom = 5;
-            google.maps.event.trigger(map,'resize');
+            gm.event.trigger(map,'resize');
           }, 1500);
         });
       };
@@ -240,8 +244,9 @@
 
         $rootScope.totalPlacesFound = dataLength;
 
-        if(dataLength === 0)
+        if(dataLength === 0) {
           msgType = 'warning';
+        }
 
         $rootScope.alerts = [{ type: msgType }];
       }

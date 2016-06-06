@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Service: myApp.CategoriesService', function () {
 
     // load the service's module

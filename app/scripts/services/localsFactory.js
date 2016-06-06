@@ -21,10 +21,10 @@
 
         return $http.get(resource + '/' + type, {
           params: {
-            "client_id": APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
-            "client_secret": APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
-            "v": 20130815,
-            "ll": latlong
+            'client_id': APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
+            'client_secret': APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
+            'v': 20130815,
+            'll': latlong
           }
         });
       };
@@ -34,11 +34,11 @@
 
         return $http.get(resource + '/' + type, {
           params: {
-            "client_id": APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
-            "client_secret": APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
-            "v": 20130815,
-            "ll": latlong,
-            "limit": 5
+            'client_id': APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
+            'client_secret': APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
+            'v': 20130815,
+            'll': latlong,
+            'limit': 5
           }
         });
       };
@@ -48,12 +48,12 @@
 
         return $http.get(resource + '/' + type, {
           params: {
-            "client_id": APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
-            "client_secret": APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
-            "v": 20130815,
-            "ll": params.ll,
-            "categoryId": params.categoryId,
-            "radius": params.radius
+            'client_id': APP_CONSTANTS.FOURSQUARE_CLIENT_ID,
+            'client_secret': APP_CONSTANTS.FOURSQUARE_CLIENT_SECRET,
+            'v': 20130815,
+            'll': params.ll,
+            'categoryId': params.categoryId,
+            'radius': params.radius
           }
         });
       };

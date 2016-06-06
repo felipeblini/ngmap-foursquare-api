@@ -1,15 +1,18 @@
-/**
- * @ngdoc service
- * @name myApp:CategoriesService
- *
- * @description
- * Service to treat with Categories functionality
- *
- * */
-angular.module('softruckFoursquareApp')
-    .service('CategoriesService', function() {
+(function() {
+  'use strict';
 
-      this.findCategoriesInAList = function(list) {
+  /**
+   * @ngdoc service
+   * @name myApp:CategoriesService
+   *
+   * @description
+   * Service to treat with Categories functionality
+   *
+   * */
+  angular.module('softruckFoursquareApp')
+    .service('CategoriesService', function () {
+
+      this.findCategoriesInAList = function (list) {
         var categoriesList = [];
         var i;
         var locals = list.data.response.venues;
@@ -21,13 +24,14 @@ angular.module('softruckFoursquareApp')
           var localCategoriesLength = localCategories.length;
 
           for (j = 0; j < localCategoriesLength; j++) {
-            if(!categoriesList.contains(localCategories[j].shortName))
+            if (!categoriesList.contains(localCategories[j].shortName)) {
               categoriesList.push(localCategories[j]);
+            }
           }
         }
 
         return categoriesList;
-      }
-
-});
+      };
+    });
+})();
 
