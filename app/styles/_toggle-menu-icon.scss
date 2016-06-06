@@ -1,0 +1,53 @@
+.toggle-menu {
+  display: block;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  top: 2rem;
+  left: 2rem;
+  text-indent: -999em;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.toggle-menu--clicked {
+  
+  .menu__bar {
+    
+    &:nth-child(1) {
+      top: 1.25rem;
+      transform: rotate(45deg);
+    }
+    
+    &:nth-child(2) {
+      transform: translateX(100%) scale(0);
+    }
+    
+    &:nth-child(3) {
+      top: 1.25rem;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.menu__bar {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 3rem;
+  height: .5rem;
+  transition: top .4s ease-out, transform .4s ease-out;
+  background-color: #222;
+  
+  &:nth-child(1) {
+    top: 0;
+  }
+  
+  &:nth-child(2) {
+    top: 1.25rem;
+  }
+  
+  &:nth-child(3) {
+    top: 2.5rem;
+  }
+}
