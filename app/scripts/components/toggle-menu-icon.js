@@ -16,15 +16,4 @@
       }
     }, false);
   }, false);
-
-  // window.addEventListener('resize', function() {
-  //   if(window.innerWidth < 768) {
-  //     console.log(window.innerWidth);
-  //     if (body.classList.contains('toggled')) {
-  //       body.classList.remove('toggled');
-  //     } else {
-  //       body.classList.add('toggled');
-  //     }
-  //   }
-  // }, false);
 })(window, document);

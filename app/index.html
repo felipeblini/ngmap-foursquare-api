@@ -9,6 +9,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -31,7 +32,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" ng-controller="SideBarCtrl">
       <ul class="sidebar-nav nav">
         <li class="sidebar-brand">
           <h3>Softruck 4square</h3>
@@ -43,11 +44,7 @@
                 <i class="glyphicon glyphicon-th-large"></i> <span class="nav-label">Categories</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
               </uib-accordion-heading>
               <ul class="nav nav-second-level">
-                <li><a href="#/">Night</a></li>
-                <li><a href="#/">Dinner</a></li>
-                <li><a href="#/">Coffee</a></li>
-                <li><a href="#/">Bakery</a></li>
-                <li><a href="#/">Lunch</a></li>
+                <li ng-repeat="cat in categories"><a href="#/">{{cat.name}}</a></li>
             </ul>
             </uib-accordion-group>
           </uib-accordion>
@@ -58,7 +55,7 @@
               <uib-accordion-heading class="category">
                 <i class="glyphicon glyphicon-flag"></i> <span class="nav-label">Distance</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
               </uib-accordion-heading>
-               Lorem
+              <input id="ex8" ng-model="distance" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="15"/>
             </uib-accordion-group>
           </uib-accordion>
         </li>
@@ -66,23 +63,28 @@
           <uib-accordion close-others="oneAtATime">
             <uib-accordion-group is-open="open">
               <uib-accordion-heading class="category">
-                <i class="glyphicon glyphicon-heart"></i> <span class="nav-label">Top 5 near you</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
+                <i class="glyphicon glyphicon-fire"></i> <span class="nav-label">Top 5 near you</span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
               </uib-accordion-heading>
-              <ul>
-                <li><a href="#">Location 1</a></li>
-                <li><a href="#">Location 2</a></li>
-                <li><a href="#">Location 3</a></li>
-                <li><a href="#">Location 4</a></li>
-                <li><a href="#">Location 5</a></li>
+              <ul class="nav nav-second-level">
+                <li ng-repeat="item in topFive"><a href="#">{{ item.name }}</a></li>
               </ul>
             </uib-accordion-group>
           </uib-accordion>
         </li>
-        <li>
-          <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Heat map</span> <i class="pull-right glyphicon"></i>
+        <li class="nav-first-level">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a href="">
+                    <i class="glyphicon glyphicon-map-marker"></i> <span class="nav-label">Heat map</span></i></span>
+                  </a>
+                </h4>
+              </div>
+            </div>
+          </div>
         </li>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    </div><!-- /#sidebar-wrapper -->
 
     <!-- Toggle menu animated icon -->
     <div class="toggle-menu" data-toggle-menu id="menu-toggle">
@@ -97,13 +99,6 @@
       <div class="container-fluid">
         <div ng-view=""></div>
       </div>
-
-      <div class="footer">
-        <div class="container">
-          <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-        </div>
-      </div>
-      
     </div>
     <!-- /#page-content-wrapper -->
     
@@ -114,20 +109,25 @@
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+  <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   
   <!-- Menu Toggle Script -->
   <script>
-    $(".category").click(function(e) {
+    $(document).ready(function() {
+      $(".category").click(function(e) {
         $(this).toggleClass("active");
-    });
+      });
+      
+      $("#ex8").slider();
+    })
   </script>
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -136,6 +136,7 @@
   
   <script src="scripts/components/toggle-menu-icon.js"></script>
   
+  <script src="scripts/controllers/sidebar-ctrl.js"></script>
   <script src="scripts/controllers/main-ctrl.js"></script>
   <!-- endbuild -->
 </body>
