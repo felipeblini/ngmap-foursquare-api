@@ -11,9 +11,11 @@
     angular.module('softruckFoursquareApp')
       .controller('MainCtrl', function () {
         var vm = this;
-        vm.mapMarker = [];
+        vm.mapMarkers = [];
         
-        vm.mapMarker[0] = '46.000, -23.980';
+        vm.BHLatLong = '-19.9208300, -43.9377800';
+        
+        vm.mapMarkers[0] = { latlong:  vm.BHLatLong};
         
         vm.awesomeThings = [
           'HTML5 Boilerplate',
