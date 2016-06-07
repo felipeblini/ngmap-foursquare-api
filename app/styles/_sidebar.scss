@@ -15,8 +15,6 @@
     }
 }
 
-
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -31,7 +29,6 @@
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
 
 .sidebar-nav {
     position: absolute;
@@ -51,6 +48,7 @@
 
 .sidebar-nav li {
     text-indent: 20px;
+    color: #fff;
 }
 
 .sidebar-nav li a {
